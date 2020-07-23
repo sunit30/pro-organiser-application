@@ -1,0 +1,28 @@
+.header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: rgb(218, 144, 144);
+}
+.createBoard {
+  display: inline-block;
+  padding: 0 30%;
+}
+.boardInput {
+  padding: 0px 5%;
+}
+.inputElement {
+  width: 100%;
+  border-radius: 7px;
+  padding: 2%;
+  background-color: rgb(223, 215, 215);
+}
+
+@media only screen and (max-width: 500px) {
+  .createBoard {
+    padding: 0%;
+  }
+
+  .inputElement {
+    border: 1px solid black;
+  }
+}
