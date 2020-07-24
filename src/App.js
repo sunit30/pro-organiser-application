@@ -1,26 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import firebase from "./fire";
 import "./App.css";
-import NavBar from "./components/NavBar/NavBar";
-import Home from "./views/home/Home";
-import CreateBoard from "./views/addBoard/CreateBoard";
-import PageNotFound from "./views/pageNotFound/PageNotFound";
-import Board from "./views/board/Board";
+import Pre_Loader from "./Components/Pre-Loader/Pre_Loader";
 
-function App() {
+import { Route, Switch } from "react-router-dom";
+import NavBar from "./Components/NavBar/NavBar";
+import Homepage from "./Pages/Homepage/Homepage";
+import Board_Page from "./Pages/Create_Board_Page/Board_Page";
+import MyBoard from "./Pages/Individual_Board_Page/MyBoard";
+const App = () => {
   return (
-    <Router>
+    <div className="App">
       <NavBar />
-      <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route exact path="/createboard" component={CreateBoard}></Route>
-        <Route exact path="/:boardName" component={Board}></Route>
 
-        <Route path="*" component={PageNotFound}></Route>
+      <Switch>
+        <Route path="/" exact component={Homepage} />
+        <Route path="/createboard" exact strict component={Board_Page} />
+        <Route path="/:boardName" component={MyBoard} />
       </Switch>
-    </Router>
+    </div>
   );
-}
+};
 
 export default App;
